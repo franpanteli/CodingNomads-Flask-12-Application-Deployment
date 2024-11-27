@@ -1,0 +1,61 @@
+-> Users and User Authentication Lesson: Using Flask-Login
+    -> Learn about the Flask-Login module for managing user authentication in Flask applications
+    -> Flask-Login simplifies handling user sessions and tracking authentication status
+
+-> Flask-Login
+    -> Flask-Login is a lightweight extension that helps manage user sessions and authentication
+    -> It updates the user's authenticated state in the session, making it easier to check if a user is signed in or not
+    -> To install, simply run: `pip install flask-login`
+
+-> User Model Prep for Authentication
+    -> Flask-Login requires a user model to function
+    -> The current model may need a few additional properties and methods to support Flask-Login
+    -> You need to add these properties to your user model to work with Flask-Login:
+        -> `is_authenticated`: True if the user is logged in, False otherwise
+        -> `is_active`: True if the user account is active, False if disabled
+        -> `is_anonymous`: False for regular users, True for anonymous users
+        -> `get_id()`: A method that returns a unique identifier for the user
+
+-> Using UserMixin in the User Model
+    -> Flask-Login provides a `UserMixin` class that adds these properties and methods automatically
+    -> To use it, simply add `UserMixin` as a base class in your `User` model:
+      ```python
+      class User(UserMixin, db.Model):
+          # ...
+      ```
+
+-> Using Flask-Login's LoginManager
+    -> To manage logins, you need to initialize the `LoginManager` class
+    -> The `LoginManager` is responsible for loading users and redirecting unauthenticated users to the login page
+    -> Initialize the `LoginManager` in your application factory:
+      ```python
+      from flask_login import LoginManager
+      login_manager = LoginManager()
+      login_manager.login_view = 'auth.login'
+      ```
+
+-> User Loader
+    -> Flask-Login requires a user loader function that returns a user object given a user identifier
+    -> Use the `@login_manager.user_loader` decorator to define this function:
+      ```python
+      @login_manager.user_loader
+      def load_user(user_id):
+          return User.query.get(int(user_id))
+      ```
+
+-> Protecting Routes with `login_required`
+    -> The `login_required` decorator protects routes from being accessed by unauthenticated users
+    -> Apply `@login_required` to any route that should be accessible only to logged-in users:
+      ```python
+      from flask_login import login_required
+      @app.route('/top-secret')
+      @login_required
+      def top_secret():
+          return "Welcome, VIP member!"
+      ```
+
+-> Summary: Using Flask-Login and LoginManager for User Authentication
+    -> Flask-Login handles user sessions and manages authentication
+    -> The user model requires specific properties like `is_authenticated`, `is_active`, and `get_id()`
+    -> Initialize `LoginManager` to manage login redirection and user loading
+    -> Use `login_required` to protect routes from unauthorized access

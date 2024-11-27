@@ -1,0 +1,88 @@
+-> Users and User Authentication Lesson: Flask-Login in Action
+    -> This lesson focuses on integrating Flask-Login to manage user login and logout functionality
+    -> Flask-Login is used to handle user sessions, making it easier to manage authenticated users
+
+-> Flask-Login Functionality
+    -> Add an email column to the `User` model to allow users to log in with their email
+    -> This is more user-friendly since many users remember their email addresses better than usernames
+
+-> Logging In
+    -> Modify the view function for the `/login` route to handle user login
+    -> The view function will check if the user exists in the database and if the password is correct
+    -> On successful login, use Flask-Login’s `login_user()` to log the user in and start the session
+    -> If the user was redirected to the login page from a restricted page, they will be redirected back after logging in
+    -> The form should handle both GET (display the login form) and POST (process form submission)
+    -> If login fails, flash an error message to the user
+
+    **Code example**:
+    ```python
+    from flask import render_template, redirect, request, url_for, flash
+    from flask_login import login_user
+    user = User.query.filter_by(email=form.email.data).first()
+    if user and user.check_password(form.password.data):
+        login_user(user, remember=form.remember_me.data)
+        next_page = request.args.get('next')
+        return redirect(next_page or url_for('main.index'))
+    flash('Invalid email or password')
+    return render_template('auth/login.html', form=form)
+    ```
+
+-> Logging Out
+    -> The `logout_user()` function is used to log out the current user and reset the session
+    -> This can be triggered with a `/logout` route
+    -> You can customize the logout message and behavior, such as flashing a message when the user logs out
+
+    **Code example**:
+    ```python
+    @auth.route('/logout')
+    def logout():
+        logout_user()
+        flash('You have been logged out')
+        return redirect(url_for('main.index'))
+    ```
+
+-> Changes To Templates
+    -> Update the `base.html` template to show login/logout options based on the user’s authentication status
+    -> Use `current_user.is_authenticated` to check if the user is logged in and display the appropriate links
+
+    **Code example**:
+    ```html
+    <ul class="nav navbar-nav navbar-right">
+        {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+        {% else %}
+            <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+        {% endif %}
+    </ul>
+    ```
+
+-> Test Your Login!
+    -> To test the login functionality, add a user to the database (with email, username, and password)
+    -> Use the Flask shell to create a user object and commit it to the database
+    -> Launch the app and navigate to the login page, then test logging in with the user you created
+
+    **Code example**:
+    ```python
+    flask shell
+    >>> u = User(email='paul@example.com', username='john', password='password')
+    >>> db.session.add(u)
+    >>> db.session.commit()
+    ```
+
+-> How Flask-Login Works
+    -> Upon login, Flask-Login stores the user’s ID in the session
+    -> On every subsequent request, Flask-Login checks the session for the user ID and loads the corresponding user object
+    -> If the user is authenticated, `current_user` will be an instance of `User`; otherwise, it will be an `AnonymousUser`
+    -> The `current_user` variable is automatically available in templates and view functions
+
+    **Flow**:
+    1. User accesses the login page.
+    2. After form submission, Flask-Login's `login_user()` is called, storing the user’s ID in the session.
+    3. Redirect the user to the appropriate page (either the page they tried to access or the homepage).
+    4. On future requests, Flask-Login checks the session for the user ID and loads the user object.
+
+-> Summary: Flask-Login in Action
+    -> You now understand how to handle user login and logout using Flask-Login
+    -> The steps included modifying the `User` model, adding a login view, handling the login form, and updating templates
+    -> You also learned how Flask-Login handles user sessions and manages the current user context
+    -> In the next lesson, you’ll learn how to implement user registration so users can create their own accounts

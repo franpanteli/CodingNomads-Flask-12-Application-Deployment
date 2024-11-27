@@ -1,0 +1,35 @@
+-> Users and User Authentication Lesson: Lab - Create a Login Form
+    -> This lab focuses on creating a login form with Flask and Flask-WTF (Flask extension for forms)
+    -> You'll define the form fields, build the template to display it, and be ready for integrating user login functionality later
+
+-> Login Form
+    -> Create a class derived from `FlaskForm` to define the login form
+    -> Store the form class in the `auth/forms.py` file
+
+-> Form Fields
+    1. **Email Field**:
+        -> Use a `StringField` for the email address
+        -> Apply these validators:
+            -> `DataRequired()`: Ensures the field is not empty
+            -> `Length(min=1, max=64)`: Limits the email length to a maximum of 64 characters
+            -> `Email()`: Validates that the entered value is a valid email address
+    2. **Password Field**:
+        -> Use a `PasswordField` for the password
+        -> This field will be required for form submission
+    3. **Remember Me Field**:
+        -> Use a `BooleanField` for the "remember me" checkbox (to keep users logged in for a while)
+        -> This field will simply have a label and doesn't require additional logic for now
+
+-> Template
+    -> Define the template that will display the login form
+    -> Store the template in `templates/auth/login.html`
+    -> Remember to inherit from the base template (`base.html`)
+
+-> Summary of the Steps
+    1. Create a `LoginForm` class in `auth/forms.py`
+    2. Define the fields: `email`, `password`, and `remember_me` with appropriate validation
+    3. Build a `login.html` template that renders the form
+    4. The view function for handling form submission will be covered later in another lesson
+
+-> Outcome
+    -> You'll have a basic login form ready to use for handling user authentication
