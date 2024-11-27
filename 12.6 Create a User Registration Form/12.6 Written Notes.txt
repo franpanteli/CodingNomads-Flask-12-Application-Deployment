@@ -1,0 +1,44 @@
+-> Users and User Authentication Lesson
+	-> Create a User Registration Form
+	-> 6 min to complete · By Brandon Gigous
+	-> Contents
+		-> Introduction
+		-> Registration Form
+		-> Add A Link To The Login Page
+		-> Summary: How to Create a Flask Registration Form
+	-> Even if you've built login functionality into a Python-Flask app, there's no way for you to make new accounts without going into a shell session
+	-> In this lesson, you'll make a registration page for new users to sign up for an account
+	-> This registration form will require a lot of validation to avoid users creating accounts randomly
+	-> Validation helps prevent a mess in your database and protects your system from malicious users
+	-> Users will need to follow guidelines like minimum username lengths and valid email addresses
+	-> The new registration form will go in the file: app/auth/views.py
+		-> The first field is the email, limited to 64 characters
+		-> The username field must match a pattern, ensuring it starts with a letter, followed by any combination of letters, numbers, underscores, or dots
+		-> Regular expression flags and error messages are defined for username validation
+		-> The password field requires a password, validated by ensuring it matches a confirmation field
+		-> The confirmation password field is a second password field to confirm user input
+		-> The submit field allows the user to submit the form
+	-> The validation functions use Flask-WTF to check if fields meet the criteria
+		-> If the email or username is already taken, a ValidationError is raised to inform the user
+	-> The registration form also checks if the username or email already exists in the database
+		-> Custom validators ensure uniqueness of email and username to avoid duplicates in the database
+	-> To allow users to access the registration page, add a link to the login template
+		-> The link can also be added to the navbar for easy access
+		-> A new template is required to render the registration form, similar to the login form
+	-> The next step in user authentication is adding the registration view function, covered in the next lesson
+	-> In summary, the registration form includes:
+		-> Email validation using Flask-WTF validators
+		-> Username validation with a regular expression pattern
+		-> Password and confirmation password fields to ensure consistency
+		-> A custom validation function to check for duplicate emails or usernames in the database
+		-> A link to the registration page is added to the login template
+	-> Mentorship Makes the Difference!
+		-> Join the CodingNomads' Mentorship Bootcamp Program for dedicated support
+		-> Weekly 1-on-1 screen share meetings with a professional mentor
+	-> The registration form's code is as follows:
+		-> email = StringField('Email', validators=[DataRequired(), Length(1, 64), Email()])
+		-> username = StringField('Username', validators=[DataRequired(), Length(1, 64), Regexp('^[A-Za-z][A-Za-z0-9_.*]*$', 0, 'Usernames must have only letters, numbers, dots, or underscores')])
+		-> password = PasswordField('Password', validators=[DataRequired(), EqualTo('password_confirm', message='Passwords do not match')])
+		-> password_confirm = PasswordField('Password (confirm):', validators=[DataRequired()])
+		-> submit = SubmitField('Register')
+	-> The validation functions for email and username check the database for existing entries and raise a ValidationError if needed

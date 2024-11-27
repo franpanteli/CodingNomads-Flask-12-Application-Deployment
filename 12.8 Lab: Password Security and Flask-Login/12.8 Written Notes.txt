@@ -1,0 +1,13 @@
+-> Users and User Authentication Lesson
+	-> Lab: Password Security and Flask-Login
+	-> 3 min to complete · By Brandon Gigous
+	-> If you have not already cloned the Python Flask labs project, and got it open in VS Code, please do so before proceeding with this lab
+	-> Learn by Doing
+		-> Navigate to the labs project and open it in VS Code
+		-> Complete all the exercises in the labs folder
+		-> If you're subscribed to our membership or mentorship programs, feel free to reach out on Discord for a review or any help
+		-> When you complete the labs, be sure to push your work to GitHub
+		-> This step is easily overlooked but is one of the most important
+		-> Version control and collaboration tools like Git & GitHub are essential for software engineers and engineering companies
+		-> We advise that you not skip this step: prove your work by pushing it to GitHub and getting the practice
+		-> Get those GitHub Greens!
