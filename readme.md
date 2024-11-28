@@ -4,3 +4,4 @@ I got Siri to read out my notes on the computer and recorded Voice Memos of thes
 Here is an example GIF showing the application in action:
 
 ![App demo](https://github.com/franpanteli/12/blob/main/12%20Notes%20Word%20Cloud%20Giff.gif)
+[Used a word cloud generator](https://wordart.com/create)
