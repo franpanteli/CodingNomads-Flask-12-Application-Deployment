@@ -1,14 +1,14 @@
 -> Users and User Authentication Lesson
-	-> Lab: Create the Registration View Function
-	-> 3 min to complete · By Brandon Gigous
-	-> Take a deep breath, the worst of user authentication is over
-	-> If you thought there'd be no more practice with this tool or concept, you'd be wrong
-	-> There's just one more thing to do and that's to fill out your view function
-	-> Learn by Doing
-		-> If you haven't already, make your template now
-		-> Pull up your file and get to coding
-	-> Guidelines for the registration view function:
-		-> Display your registration form
-		-> Upon a POST request, validate the form
-		-> After the form is validated, create the user based on the provided info and add it to the database
-		-> Flash a message that the user can now log in, then redirect them to the login page
+    -> Lab: Create the Registration View Function
+    -> 3 min to complete · By Brandon Gigous
+    -> Take a deep breath, the worst of user authentication is over
+    -> If you thought there'd be no more practice with this tool or concept, you'd be wrong
+    -> There's just one more thing to do and that's to fill out your view function
+    -> Learn by Doing
+        -> If you haven't already, make your template now
+        -> Pull up your file and get to coding
+    -> Guidelines for the registration view function:
+        -> Display your registration form
+        -> Upon a POST request, validate the form
+        -> After the form is validated, create the user based on the provided info and add it to the database
+        -> Flash a message that the user can now log in, then redirect them to the login page

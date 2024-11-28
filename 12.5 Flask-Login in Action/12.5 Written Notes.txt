@@ -30,7 +30,7 @@
 -> Logging Out
     -> The `logout_user()` function is used to log out the current user and reset the session
     -> This can be triggered with a `/logout` route
-    -> You can customize the logout message and behavior, such as flashing a message when the user logs out
+    -> You can customise the logout message and behaviour, such as flashing a message when the user logs out
 
     **Code example**:
     ```python

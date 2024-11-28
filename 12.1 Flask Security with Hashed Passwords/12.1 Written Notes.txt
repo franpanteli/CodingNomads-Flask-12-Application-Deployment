@@ -1,6 +1,6 @@
 -> Users and User Authentication Lesson: Flask Security with Hashed Passwords
     -> Learn about password security with hashed passwords for protecting user information
-    -> The lesson covers securing passwords and preventing unauthorized access through authentication
+    -> The lesson covers securing passwords and preventing unauthorised access through authentication
     -> Users’ passwords are at risk of being stolen, so it's crucial to protect them properly
     -> The focus is on using hashing techniques to ensure passwords are stored securely without revealing their content
     -> Learn the importance of keeping passwords safe from attackers
@@ -16,7 +16,7 @@
 
 -> What are Hashed Passwords?
     -> Hashed passwords are the result of a password passed through a hashing function, altered with salt for security
-    -> Hashing makes the password unrecognizable and hard to reverse-engineer
+    -> Hashing makes the password unrecognisable and hard to reverse-engineer
     -> Salt is used to add randomness to the hashing process, preventing attackers from using precomputed hash databases (rainbow tables)
     -> While recovering the original password from the hash is difficult, it’s possible with the correct hashing function and salt
     -> Hashing is a complex process that is made easier with the help of libraries like Werkzeug
@@ -43,7 +43,7 @@
     -> Test scenarios include verifying that hashes are different for the same password, ensuring the password validation is secure
 
 -> Summary: Flask Security with Hashed Passwords
-    -> You learned the importance of securing user passwords, especially given the risk of password reuse across sites
+    -> You learnt the importance of securing user passwords, especially given the risk of password reuse across sites
     -> Instead of storing plain text passwords, you store their hashed versions for added security
     -> The hashing process uses a function and salt to make the original password nearly impossible to recover
     -> You explored the Werkzeug library's password hashing functions, `generate_password_hash()` and `check_password_hash()`

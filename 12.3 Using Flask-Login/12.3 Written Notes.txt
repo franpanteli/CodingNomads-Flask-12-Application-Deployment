@@ -25,9 +25,9 @@
       ```
 
 -> Using Flask-Login's LoginManager
-    -> To manage logins, you need to initialize the `LoginManager` class
+    -> To manage logins, you need to initialise the `LoginManager` class
     -> The `LoginManager` is responsible for loading users and redirecting unauthenticated users to the login page
-    -> Initialize the `LoginManager` in your application factory:
+    -> Initialise the `LoginManager` in your application factory:
       ```python
       from flask_login import LoginManager
       login_manager = LoginManager()
@@ -57,5 +57,5 @@
 -> Summary: Using Flask-Login and LoginManager for User Authentication
     -> Flask-Login handles user sessions and manages authentication
     -> The user model requires specific properties like `is_authenticated`, `is_active`, and `get_id()`
-    -> Initialize `LoginManager` to manage login redirection and user loading
-    -> Use `login_required` to protect routes from unauthorized access
+    -> Initialise `LoginManager` to manage login redirection and user loading
+    -> Use `login_required` to protect routes from unauthorised access

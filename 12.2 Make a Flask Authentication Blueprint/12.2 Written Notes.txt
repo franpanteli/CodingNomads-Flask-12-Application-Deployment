@@ -1,8 +1,8 @@
 -> Users and User Authentication Lesson: Make a Flask Authentication Blueprint
     -> Learn how to create an authentication blueprint in Flask for handling user authentication
-    -> Apply the concepts of blueprints you learned earlier to build the authentication system
+    -> Apply the concepts of blueprints you learnt earlier to build the authentication system
     -> The blueprint will contain all the necessary components like view functions, forms, and routes
-    -> You will structure the blueprint to ensure all authentication-related functionality is neatly organized
+    -> You will structure the blueprint to ensure all authentication-related functionality is neatly organised
 
 -> Create a Subpackage
     -> Start by creating a subpackage within your main application package
@@ -11,7 +11,7 @@
 
 -> Create the Blueprint
     -> In your newly created subpackage, create a `Blueprint` object in an `__init__.py` file
-    -> This file will define and initialize the blueprint for your authentication system
+    -> This file will define and initialise the blueprint for your authentication system
     -> The blueprint is used to group authentication-related views and make the application more maintainable
 
 -> Create the View Functions
