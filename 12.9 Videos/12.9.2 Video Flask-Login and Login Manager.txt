@@ -1,0 +1,47 @@
+-> install and configuring Flask login from login_manager 
+-> in the CLI 
+	-> install flask_login as well as email_validator with pip
+	-> pip install flask_login email_validator
+	-> he then adds an email column to the user model and migrates 
+		-> this is in the User class under the models.py file 
+		-> the .Column method is used for this 
+	-> import 
+		-> from flask_login import UserMixin 
+		-> this has methods (e.g) to check if the user is signed in or not 
+		-> you want the user model to inherit from the UserMixin class
+	-> creating an instance of the login manager
+		-> in __init__.py
+			-> from flask_login import LoginManager
+			-> he then initialises this, by using LoginManager() and setting this equal to a variable 
+		-> he then defines a view function which acts as the login page 
+			-> this is done using the .login_view method 
+		-> he then initialises the manager, by using the .init_app method
+	-> in the models.py file 
+		-> @ <- decorator 
+		-> he defines a function called load_user which takes the id of the user and returns that user 
+		-> this is via the User.query.get method 
+		-> he also imports the login manager 
+			-> from . Import db, login_manager 
+	-> in the views.py file 
+		-> from flask_login import login_required 
+		-> to force a user to login before accessing a particular page
+		-> to test this 
+			-> he makes a test route, using @main.route
+			-> @login_required is then entered after this 
+			-> this creates a page which only be seen for the logged in user 
+		-> back in the CLI 	
+			-> he then visits the page in the browser
+			-> this tells us if the page has been redirected or not 
+		-> adding a logout function 
+			-> he defines a logout function in the views.py file 
+			-> this flashes a method 
+			-> then in the bae.html template, he adds a link to the login and logout routes 
+				-> one or the other is shown, depending on the logged in / out state of the user 
+		-> in the index.html file
+			-> he then uses .is_authenticated to check if the current user is logged in or not 
+			-> to get rid of white space on the rendered page 
+			-> he uses minuses before the control structure blocks with Jinja in that html file 
+			-> he then tests this in the CLI 
+				-> adding a username to the database and committing the changes 
+
+		-> he then launches the app to test if this has worked 
