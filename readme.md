@@ -1,6 +1,6 @@
 # CodingNomads-Flask-12-Application-Deployment
 ## Repository File Tree
-This repository contains my work for the 16th module in the [Coding Nomads Flask Web Framework](https://codingnomads.com/course/python-flask-web-framework) course. I completed this 21-module course as part of my independent learning, to invest in my Python skills. I produced an in-depth library of resources on this module, whose file tree is provided below. 
+This repository contains my work for the 12th module in the [Coding Nomads Flask Web Framework](https://codingnomads.com/course/python-flask-web-framework) course. I completed this 21-module course as part of my independent learning, to invest in my Python skills. I produced an in-depth library of resources on this module, whose file tree is provided below. 
 
 ![Screenshot 2025-01-19 at 16 34 47](https://github.com/user-attachments/assets/6d3f29f9-24e8-47f1-8bc0-5e4695ebf881)
 
