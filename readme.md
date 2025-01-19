@@ -2,7 +2,7 @@
 ## Repository File Tree
 This repository contains my work for the 16th module in the [Coding Nomads Flask Web Framework](https://codingnomads.com/course/python-flask-web-framework) course. I completed this 21-module course as part of my independent learning, to invest in my Python skills. I produced an in-depth library of resources on this module, whose file tree is provided below. 
 
-<img width="560" alt="Screenshot 2025-01-19 at 15 41 22" src="https://github.com/user-attachments/assets/485e3411-96c3-4fdc-9528-b8dd8a2e510f" />
+![Screenshot 2025-01-19 at 16 33 26](https://github.com/user-attachments/assets/dcee9cb4-f80a-4a7f-8ca7-1dac590abe1d)
 
 ## Library Contents
 ### Blue
