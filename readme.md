@@ -8,7 +8,7 @@ This repository contains my work for the 16th module in the [Coding Nomads Flask
 ### Blue
 I saved course material as pdf files (.pdf extensions) and made notes on these (Written Notes.txt). I made summary notes, by recording voice memos of Siri reading my written notes out (Voiced Notes.mp4a) and [created word clouds](https://wordart.com/create) out of these (Word Cloud.png). These word clouds were combined into a giff, to visually represent module content.
 
-![12 Notes Word Cloud Giff](https://github.com/user-attachments/assets/d47be12b-e8f5-4c2b-a946-7e09d66e3ea6)
+![12 Notes Word Cloud Giff](https://github.com/user-attachments/assets/c5bad732-5b1f-4716-ae57-1dfba3c3f543)
 
 ### Yellow
 Video notes were made in a txt format, contained in [16.9 Videos](https://github.com/franpanteli/CodingNomads-Flask-16-Performance-Optimisation/tree/main/16.9%20Videos). A [module quiz](https://github.com/franpanteli/CodingNomads-Flask-16-Performance-Optimisation/blob/main/16.10%20Quizzes/16.10%20Quiz%20Representing%20Content.pdf) was finally completed and passed. 
